@@ -79,11 +79,12 @@ const Dialog = props => {
             width: 50%;
             top: 50%;
             left: 50%;
-            height: 300px;
+            height: 350px;
             background: #363537;
             overflow: auto;
             transform: translate(-50%, -50%);
             z-index: 20;
+            box-shadow: 0px 0px 5px 2px #282729;
           }
           .backdrop {
             z-index: 5;
@@ -158,17 +159,143 @@ const TopMenu = props => {
       </div>
       {isNotificationsOpen && (
         <Dialog onClose={() => setIsNotificationsOpen(false)}>
-          <p>Notifications</p>
+          <div className="notifications_dialog">
+            <header>Notifications</header>
+            <section>
+              <ul>
+                <li>
+                  <i className="fas fa-circle" />
+                  <span>Foo joined the chat</span>
+                </li>
+                <li>
+                  <i className="fas fa-circle" />
+                  <span>Foo joined the chat</span>
+                </li>
+                <li>
+                  <i className="fas fa-circle" />
+                  <span>Foo joined the chat</span>
+                </li>
+                <li>
+                  <i className="fas fa-circle" />
+                  <span>Foo joined the chat</span>
+                </li>
+                <li>
+                  <i className="fas fa-circle" />
+                  <span>Foo joined the chat</span>
+                </li>
+                <li>
+                  <i className="fas fa-circle" />
+                  <span>Foo joined the chat</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <style jsx>
+            {`
+              .notifications_dialog {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+              }
+              .notifications_dialog header {
+                position: sticky;
+                top: 0px;
+              }
+
+              .notifications_dialog header,
+              .notifications_dialog footer {
+                flex: 0 1 10%;
+                background: #282729;
+                color: #6c6c6d;
+                text-align: center;
+                font-size: 2rem;
+                padding: 1rem;
+              }
+              .notifications_dialog section {
+                flex: 1;
+              }
+
+              .notifications_dialog section ul {
+                text-align: left;
+                padding: 2rem;
+              }
+              .notifications_dialog section ul li {
+                padding: 2rem;
+                background: rgba(0, 0, 0, 0.3);
+                font-size: 1.4rem;
+                color: #fff;
+                margin-top: 0.3rem;
+                color: orange;
+              }
+                .notifications_dialog section ul li i{
+                  color:limegreen;
+                }
+              .notifications_dialog section ul li span{
+                margin-left:1rem;
+              }
+            `}
+          </style>
         </Dialog>
       )}
       {isSettingsOpen && (
         <Dialog onClose={() => setIsSettingsOpen(false)}>
-          <p>Notifications</p>
+          <div className="notifications_dialog">
+            <header>Settings</header>
+            <section />
+            <footer />
+          </div>
+
+          <style jsx>
+            {`
+              .notifications_dialog {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+              }
+              .notifications_dialog header,
+              .notificationsd_dialog footer {
+                flex: 0 1 10%;
+                background: #282729;
+                color: lightgrey;
+                text-align: center;
+                font-size: 2rem;
+              }
+              .notifications_dialog section {
+                flex: 1;
+              }
+            `}
+          </style>
         </Dialog>
       )}
       {isThumbtrackOpen && (
         <Dialog onClose={() => setIsThumbtrackOpen(false)}>
-          <p>Thumbtrack</p>
+          <div className="notifications_dialog">
+            <header>Thumbtrack</header>
+            <section />
+            <footer />
+          </div>
+
+          <style jsx>
+            {`
+              .notifications_dialog {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+              }
+              .notifications_dialog header,
+              .notificationsd_dialog footer {
+                flex: 0 1 10%;
+                background: #282729;
+                color: lightgrey;
+                text-align: center;
+                font-size: 2rem;
+              }
+              .notifications_dialog section {
+                flex: 1;
+              }
+            `}
+          </style>
         </Dialog>
       )}
     </React.Fragment>

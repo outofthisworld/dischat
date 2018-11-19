@@ -147,7 +147,12 @@ const ChatChannel = props => {
               flex-direction: column;
               height: 100%;
               max-height: 100%;
-              overflow: auto;
+              overflow-x:hidden;
+              width:100%;
+            }
+            .chat_channel::-webkit-scrollbar {
+                width: 0 !important;
+                display:none;
             }
             .chat_channel__top_menu {
               flex: 0 0 50px;
